@@ -4,7 +4,7 @@ var Being = require('../src/being');
 var Part = require('../src/part');
 
 describe('Ship', function() {
-  it.skip('should be able to have a name', function() {
+  it('should be able to have a name', function() {
     var shuttle1 = new Ship({ name: 'Wanderer' });
     var shuttle2 = new Ship({ name: 'Atlantis' });
 
@@ -12,7 +12,7 @@ describe('Ship', function() {
     assert.equal(shuttle2.name, 'Atlantis');
   });
 
-  it.skip('should be able to have a type', function() {
+  it('should be able to have a type', function() {
     var shuttle1 = new Ship({name: 'Atlantis', type: 'passenger'});
     var shuttle2 = new Ship({ name: 'Atlantis', type: 'cargo' });
 
@@ -20,7 +20,7 @@ describe('Ship', function() {
     assert.equal(shuttle2.type, 'cargo');
   });
 
-  it.skip('should be able to have a max number of crew members', function() {
+  it('should be able to have a max number of crew members', function() {
     var fighter = new Ship(
       {
         name: 'Atlantis',
@@ -32,7 +32,7 @@ describe('Ship', function() {
     assert.equal(fighter.maxCrew, 2);
   });
 
-  it.skip('should have an odemeter reading of zero by default', function() {
+  it('should have an odemeter reading of zero by default', function() {
     var fighter = new Ship(
       {
         name: 'Atlantis',
@@ -44,7 +44,7 @@ describe('Ship', function() {
     assert.equal(fighter.odometer, 0);
   });
 
-  it.skip('should be able to have a different odometer reading', function() {
+  it('should be able to have a different odometer reading', function() {
     var fighter = new Ship(
       {
         name: 'Atlantis',
@@ -60,7 +60,7 @@ describe('Ship', function() {
     assert.equal(shuttle.odometer, 0);
   });
 
-  it.skip('should have a fuel capacity of 10 by default', function() {
+  it('should have a fuel capacity of 10 by default', function() {
     var fighter = new Ship(
       {
         name: 'Atlantis',
@@ -73,7 +73,7 @@ describe('Ship', function() {
     assert.equal(fighter.fuelCapacity, 10);
   });
 
-  it.skip('should be able to be initialized with a different fuel capacity', function() {
+  it('should be able to be initialized with a different fuel capacity', function() {
     var fighter = new Ship(
       {
         name: 'Atlantis',
@@ -87,7 +87,7 @@ describe('Ship', function() {
     assert.equal(fighter.fuelCapacity, 2000);
   });
 
-  it.skip('should not have any fuel by defualt', function() {
+  it('should not have any fuel by defualt', function() {
     var fighter = new Ship(
       {
         name: 'Atlantis',
@@ -100,7 +100,7 @@ describe('Ship', function() {
     assert.equal(fighter.fuel, 0);
   });
 
-  it.skip('should have a captain', function() {
+  it('should have a captain', function() {
     var captain = new Being('Will', 'human');
     var fighter = new Ship(
       {
@@ -117,7 +117,7 @@ describe('Ship', function() {
     assert.instanceOf(fighter.captain, Being);
   });
 
-  it.skip('should not have anyone on the crew by default', function() {
+  it('should not have anyone on the crew by default', function() {
     var fighter = new Ship(
       {
         name: 'Atlantis',
@@ -130,7 +130,7 @@ describe('Ship', function() {
     assert.deepEqual(fighter.crew, []);
   });
 
-  it.skip('should be able to add multiple crew members', function() {
+  it('should be able to add multiple crew members', function() {
     var crewmember = new Being('Zot', 'krill');
     var droid = new Being('R2-D2', 'droid');
     var fighter = new Ship(
@@ -149,7 +149,7 @@ describe('Ship', function() {
     assert.deepEqual(fighter.crew, crew);
   });
 
-  it.skip('should be able to add crew members to the existing crew', function() {
+  it('should be able to add crew members to the existing crew', function() {
     var initalMember = new Being('Ed', 'human');
     var crewmember = new Being('Zot', 'krill');
     var droid = new Being('R2-D2', 'droid');
@@ -171,7 +171,7 @@ describe('Ship', function() {
     assert.equal(fighter.crew.length, 3);
   });
 
-  it.skip('should only be able to add crew up to the maxCrew size', function() {
+  it('should only be able to add crew up to the maxCrew size', function() {
     var initalMember = new Being('Ed', 'human');
     var crewmember = new Being('Zot', 'krill');
     var droid = new Being('R2-D2', 'droid');

@@ -1,3 +1,5 @@
+var Candy = require('../lib/candy');
+
 class Bag {
     constructor(){
         this.empty = true

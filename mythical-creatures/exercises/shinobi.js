@@ -1,7 +1,7 @@
 class Shinobi {
-    constructor (name, element) {
-        this.name = name
-        this.element = element || 'unknown'
+    constructor (shinobiDetails) {
+        this.name = shinobiDetails.name
+        this.type = shinobiDetails.element || 'unknown'
         this.kagebushin = 0
         this.powerLevel = 0
         this.jutsu = 'none'
@@ -22,7 +22,12 @@ class Shinobi {
         this.powerLevel -= 10
         this.createClones()
         this.jutsu = 'Rasengan'
-        } 
+        }
+        else if(this.powerLevel >= 10 && this.name === 'Hinata') {
+            this.powerLevel -= 10
+            this.createClones()
+            this.jutsu = 'Byakugan'
+        }
     }
     
 }

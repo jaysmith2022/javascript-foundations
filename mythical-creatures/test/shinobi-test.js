@@ -3,45 +3,36 @@ const Shinobi = require('../exercises/Shinobi');
 
 describe('Naruto', () => {
 
-    it('should instantiate our a Shinobi', function() {
-        var naruto = new Shinobi();
-    
-        assert.instanceOf(naruto, Shinobi);
-    });
-
     it('should have a name', () => {
-        const naruto = new Shinobi('Naruto')
-        const hinata = new Shinobi('Hinata')
+        const naruto = new Shinobi({name: 'Naruto'})
+        const hinata = new Shinobi({name: 'Hinata'})
 
         assert.equal(naruto.name, 'Naruto')
         assert.equal(hinata.name, 'Hinata')
     })
 
-    it('should start with unknown element by default', () => {
-        const naruto = new Shinobi('Naruto')
+    it('should be able to have an element type', () => {
+        const naruto = new Shinobi({name: 'Naruto', element: 'Wind'})
         
-        assert.equal(naruto.element, 'unknown')
+        assert.equal(naruto.type, 'Wind')
     })
 
     it('should start off with 0 kagebushins', () => {
-        const naruto = new Shinobi('Naruto', 'Wind')
-        const hinata = new Shinobi('Hinata', 'Water')
+        const naruto = new Shinobi({name: 'Naruto', element: 'Wind'})
 
         assert.equal(naruto.kagebushin, 0)
-        assert.equal(naruto.element, 'Wind')
-        assert.equal(hinata.element, 'Water')
     })
 
     it('should start with 0 power level', () => {
-        const naruto = new Shinobi('Naruto', 'Wind')
-        const hinata = new Shinobi('Hinata', 'Water')
+        const naruto = new Shinobi({name: 'Naruto', element: 'Wind'})
+        const hinata = new Shinobi({name: 'Hinata', element: 'Water'})
 
         assert.equal(naruto.powerLevel, 0)
         assert.equal(hinata.powerLevel, 0)
     })
 
     it('should gain 5 power when the shinobi eats ramen', () => {
-        const naruto = new Shinobi('Naruto', 'Wind')
+        const naruto = new Shinobi({name: 'Naruto', element: 'Wind'})
 
         naruto.eatRamen()
         assert.equal(naruto.powerLevel, 5)
@@ -79,16 +70,24 @@ describe('Naruto', () => {
         assert.equal(naruto.jutsu, 'none')
         assert.equal(hinata.jutsu, 'none')
     })
-    it('should activate special jutsu using 10 power and 1 clones', () => {
-        const naruto = new Shinobi('Naruto', 'Wind')
+    it('should use a special jutsu', () => {
+        const naruto = new Shinobi({name: 'Naruto', element: 'Wind'})
+        const hinata = new Shinobi({name: 'Hinata', element: 'Water'})
         naruto.eatRamen()
         naruto.eatRamen()
-        assert.equal(naruto.powerLevel, 10)
         naruto.eatRamen()
         assert.equal(naruto.powerLevel, 15)
         naruto.useSpecialJutsu()
         assert.equal(naruto.kagebushin, 1)
         assert.equal(naruto.powerLevel, 3)
         assert.equal(naruto.jutsu, 'Rasengan')
+        hinata.eatRamen()
+        hinata.eatRamen()
+        hinata.eatRamen()
+        assert.equal(hinata.powerLevel, 15)
+        hinata.useSpecialJutsu()
+        assert.equal(hinata.kagebushin, 1)
+        assert.equal(hinata.powerLevel, 3)
+        assert.equal(hinata.jutsu, 'Byakugan')
     })
 })

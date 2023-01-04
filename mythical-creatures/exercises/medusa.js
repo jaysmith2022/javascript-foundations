@@ -16,7 +16,7 @@ class Medusa {
     var person = new Person(freedStatue.name, 'relieved')
     return person
   }
-   }
+  }
 }
 
 module.exports = Medusa;

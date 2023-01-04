@@ -2,7 +2,6 @@ class Hobbit {
     constructor (hobbitDetails) {
         this.name = hobbitDetails.name
         this.age = 0
-        this.age = 0 
         this.adult = false
         this.old = false
         this.hasRing = true

@@ -1,5 +1,6 @@
-const assert = require('chai').assert;
 const Shinobi = require('../exercises/Shinobi');
+const assert = require('chai').assert;
+
 
 describe('Naruto', () => {
 

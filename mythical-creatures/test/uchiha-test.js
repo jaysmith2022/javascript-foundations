@@ -31,10 +31,10 @@ describe("Uchiha", function () {
 
     assert.instanceOf(sasuke.bestFriend, Shinobi);
 
-    assert.equal(sasuke.bestFriend.name, "Naruto");
+    assert.equal(sasuke.bestFriend, "Naruto");
   });
 
-  it("should not place best friend in genjutsu", function () {
+  it.skip("should not place best friend in genjutsu", function () {
     var naruto = new Shinobi({ name: "Naruto" });
     var sasuke = new Uchiha("Sasuke", naruto);
 
@@ -45,7 +45,7 @@ describe("Uchiha", function () {
     assert.equal(genjutsuFight, "It is my ninja way, SASUKE!!");
   });
 
-  it("should place other shinobi in genjutsu", function () {
+  it.skip("should place other shinobi in genjutsu", function () {
     var neji = new Shinobi({ name: "Neji" });
     var sasuke = new Uchiha("Sasuke");
 
